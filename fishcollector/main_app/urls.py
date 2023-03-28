@@ -9,4 +9,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
 #INDEX ROUTE
     path('fish/', views.fish_index, name='index'),
+
+#SHOW ROUTE
+    path('fish/<int:fish_id>/', views.fish_detail, name='detail'),
 ]
+

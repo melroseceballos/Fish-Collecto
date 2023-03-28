@@ -5,12 +5,14 @@
 
 {% for fish in fish %}
   <div class="card">
+    <a href="{% url 'detail' fish.id %}">
     <div class="card-content">
       <span class="card-title">{{ fish.name }}</span>
-      <p>Type: {{ fish.type }}</p>
+      <p>Breed: {{ fish.breed }}</p>
       <p>Color: {{ fish.color }}</p>
         <p>Age: {{ fish.age }}</p>
     </div>
+    </a>
   </div>
 {% endfor %}
 
