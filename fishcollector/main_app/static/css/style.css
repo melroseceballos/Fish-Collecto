@@ -19,6 +19,8 @@ body {
     font-size: 36px;
     text-align: center;
     color: orange;
+    padding: 2rem;
+    border: 3px dashed black;
   }
   .about{
     color: rgb(251, 199, 67);
