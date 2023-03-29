@@ -12,5 +12,13 @@ urlpatterns = [
 
 #SHOW ROUTE
     path('fish/<int:fish_id>/', views.fish_detail, name='detail'),
-]
 
+# CREATE ROUTE
+    path('fish/create/', views.FishCreate.as_view(), name='fish_create'),
+
+# UPDATE ROUTE
+    path('fish/<int:pk>/update/', views.FishUpdate.as_view(), name='fish_update'),
+
+# DELETE ROUTE
+    path('fish/<int:pk>/delete/', views.FishDelete.as_view(), name='fish_delete'),
+]

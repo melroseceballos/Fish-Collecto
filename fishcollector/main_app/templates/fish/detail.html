@@ -9,7 +9,10 @@
     <p>Breed: {{ fish.breed }}</p>
     <p>Color: {{ fish.color|linebreaks }}</p>
     <p>Age: {{ fish.age }}</p>
-  
+  </div>
+  <div class="card-action">
+    <a href="{% url 'fish_update' fish.id %}">Edit</a>
+    <a href="{% url 'fish_delete' fish.id %}">Delete</a>
   </div>
 </div>
 
