@@ -18,9 +18,9 @@
     <a href="{% url 'fish_delete' fish.id %}">Delete</a>
   </div>
   <div class="col s6">
+    <form action="{% url 'add_feeding' fish.id %}" method="POST">
     <form method="POST">
       {% csrf_token %}
-      <!-- Render the inputs -->
       {{ feeding_form.as_p }}
       <input type="submit" class="btn" value="Add Feeding">
     </form>
@@ -39,5 +39,16 @@
     </table>
   </div>
 </div>
-
+</div>
+<script>
+  const dateEl = document.getElementById('id_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+  const selectEl = document.getElementById('id_meal');
+  M.FormSelect.init(selectEl);
+</script>
 {% endblock %}

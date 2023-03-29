@@ -21,4 +21,7 @@ urlpatterns = [
 
 # DELETE ROUTE
     path('fish/<int:pk>/delete/', views.FishDelete.as_view(), name='fish_delete'),
+
+# FEEDING ROUTE
+    path('fish/<int:fish_id>/add_feeding/', views.add_feeding, name='add_feeding')
 ]
