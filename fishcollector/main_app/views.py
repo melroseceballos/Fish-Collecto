@@ -1,16 +1,6 @@
 from django.shortcuts import render
 from .models import Fish
 
-# DEFINING FISH DATA HERE
-# fish = [
-#     {'name': 'Geraldine', 'type': 'Oranda', 'color': 'Orange/White', 'age': 2},
-#     {'name': 'Beethoven', 'type': 'Ranchu', 'color': 'Black/White', 'age': 1},
-#     {'name': 'Mac', 'type': 'Jumbo Ranchu', 'color': 'Orange/White', 'age': 3},
-#     {'name': 'Dolly', 'type': 'Ranchu', 'color': 'Orange/White/Black', 'age': 1}
-# ]
-
-
-
 # Create your views here.
 
 # FOR HOME

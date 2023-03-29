@@ -19,8 +19,9 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Fish Collectorpedia</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/fish">Fish List</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'fish_create' %}">Add A Fish</a></li>
+          <li><a href="{% url 'index' %}">Fish List</a></li>
         </ul>
       </div>
     </nav>
