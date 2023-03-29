@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Fish
+from .forms import FeedingForm
 
 # Create your views here.
 
@@ -21,8 +22,9 @@ def fish_index(request):
 # SHOW VIEWS
 def fish_detail(request, fish_id):
     fish = Fish.objects.get(id=fish_id)
+    feeding_form = FeedingForm()
     return render(request, 'fish/detail.html' , {
-        'fish': fish
+        'fish': fish,'feeding_form': feeding_form
     })
 
 #CREATE VIEW
