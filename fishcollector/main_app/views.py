@@ -29,11 +29,13 @@ def fish_detail(request, fish_id):
 class FishCreate(CreateView):
     model = Fish
     fields = ['name','breed', 'color', 'age']
+    success_url = '/fish/'
 
 #UPDATE VIEW
 class FishUpdate(UpdateView):
     model = Fish
     fields = ['breed', 'color', 'age']
+    success_url = '/fish/'
 
 # DELETE VIEW
 class FishDelete(DeleteView):
