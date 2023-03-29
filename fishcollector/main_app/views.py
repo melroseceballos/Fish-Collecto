@@ -33,7 +33,7 @@ class FishCreate(CreateView):
 #UPDATE VIEW
 class FishUpdate(UpdateView):
     model = Fish
-    field = ['breed', 'color', 'age']
+    fields = ['breed', 'color', 'age']
 
 # DELETE VIEW
 class FishDelete(DeleteView):
