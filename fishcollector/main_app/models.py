@@ -15,15 +15,6 @@ class Fish (models.Model):
     color = models.TextField(max_length=250)
     age = models.IntegerField()
 
-# FEEDING MODEL
-class Feeding(models.Model):
-  date = models.DateField()
-  meal = models.CharField(
-    max_length=1,
-    choices=MEALS,
-    default=MEALS[0][0]
-  )
-
 # FEEDING model
 class Feeding(models.Model):
   date = models.DateField()
