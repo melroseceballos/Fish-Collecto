@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Fish
+from .models import Fish , Plants
 from .forms import FeedingForm
-
-# Create your views here.
 
 # FOR HOME
 def home(request):
@@ -57,3 +55,9 @@ class FishUpdate(UpdateView):
 class FishDelete(DeleteView):
     model = Fish
     success_url = '/fish'
+
+# PLANTS INDEX
+def plants_index(request):
+    plants = Plants.objects.all()
+    return render(request, 'plants/index.html',{
+        'plants': plants})
