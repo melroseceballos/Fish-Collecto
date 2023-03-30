@@ -20,9 +20,11 @@ def fish_index(request):
 # SHOW VIEWS
 def fish_detail(request, fish_id):
     fish = Fish.objects.get(id=fish_id)
+    id_list = fish.plants.all().values_list('id')
+    plants_fish_doesnt_have = Plants.objects.exclude(id__in = id_list)
     feeding_form = FeedingForm()
     return render(request, 'fish/detail.html' , {
-        'fish': fish,'feeding_form': feeding_form
+        'fish': fish,'feeding_form': feeding_form, 'plants': plants_fish_doesnt_have
     })
 
 #ADD FEEDING ROUTE
@@ -74,4 +76,22 @@ class PlantsCreate (CreateView):
     model = Plants
     fields = '__all__'
     success_url = '/plants/'
+
+# PLANTS UPDATE
+class PlantsUpdate (UpdateView):
+    model = Plants
+    fields = ['size']
+    success_url = '/plants/'
+
+# PLANTS DELETE
+class PlantsDelete (DeleteView):
+    model = Plants
+    success_url= '/plants'
+
+# FISH ADD PLANTS ROUTE
+def assoc_plants(request, fish_id, plants_id):
+  # Note that you can pass a toy's id instead of the whole toy object
+  Fish.objects.get(id=fish_id).plants.add(plants_id)
+  return redirect('detail', fish_id=fish_id)
+
 

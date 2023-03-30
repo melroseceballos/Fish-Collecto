@@ -25,6 +25,9 @@ urlpatterns = [
 # FEEDING ROUTE
     path('fish/<int:fish_id>/add_feeding/', views.add_feeding, name='add_feeding'),
 
+# FISH ADD PLANTS ROUTE
+path('fish/<int:fish_id>/assoc_plants/<int:plants_id>/', views.assoc_plants, name='assoc_plants'),
+
 # PLANTS INDEX ROUTE
     path('plants/', views.plants_index, name='plants_index'),
 
@@ -33,4 +36,10 @@ urlpatterns = [
 
 # PLANTS CREATE ROUTE
     path('plants/create/', views.PlantsCreate.as_view(), name='plants_create'),
+
+# PLANTS UPDATE ROUTE
+    path('plants/<int:pk>/update', views.PlantsUpdate.as_view(), name='plants_update'),
+
+# PLANTS DELETE ROUTE
+    path('plants/<int:pk>/delete', views.PlantsDelete.as_view(), name='plants_delete'),
 ]

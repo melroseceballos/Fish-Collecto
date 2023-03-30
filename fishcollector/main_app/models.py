@@ -20,6 +20,8 @@ class Fish (models.Model):
     breed = models.CharField(max_length=100)
     color = models.TextField(max_length=250)
     age = models.IntegerField()
+    # MANY TO MANY RELATIONSHIP
+    plants = models.ManyToManyField(Plants)
 
 # FEEDING model
 class Feeding(models.Model):
