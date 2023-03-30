@@ -40,6 +40,10 @@ class Feeding(models.Model):
   class Meta:
      ordering=['-date']
 
-
+# REDIRECT FISH CREATE
 def get_absolute_url(self):
     return reverse('detail', kwargs={'fish_id': self.id})
+
+# REDIRECT PLANTS CREATE  
+def get_absolute_ulr(self):
+   return reverse('plants_details', kwargs={'plants_id': self.id})

@@ -61,3 +61,17 @@ def plants_index(request):
     plants = Plants.objects.all()
     return render(request, 'plants/index.html',{
         'plants': plants})
+
+# PLANTS DETAILS
+def plants_details(request, plants_id):
+    plants = Plants.objects.get(id = plants_id)
+    return render (request, 'plants/details.html', {
+        'plants': plants
+    })
+
+# PLANTS CREATE
+class PlantsCreate (CreateView):
+    model = Plants
+    fields = '__all__'
+    success_url = '/plants/'
+

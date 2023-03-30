@@ -29,5 +29,8 @@ urlpatterns = [
     path('plants/', views.plants_index, name='plants_index'),
 
 # PLANTS DETAILS ROUTE
-    path('plants/<int:plants.id>/', views.plant_details, name='plants_details'),
+    path('plants/<int:plants_id>/', views.plants_details, name='plants_details'),
+
+# PLANTS CREATE ROUTE
+    path('plants/create/', views.PlantsCreate.as_view(), name='plants_create'),
 ]
