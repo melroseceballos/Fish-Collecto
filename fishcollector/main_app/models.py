@@ -8,6 +8,12 @@ MEALS = (
     ('D', 'Dinner')
 )
 
+  # PLANTS model
+class Plants(models.Model):
+  name = models.CharField(max_length= 100)
+  size = models.CharField(max_length= 100)
+  
+
 # Create your models here.
 class Fish (models.Model):
     name = models.CharField(max_length=100)
@@ -23,6 +29,7 @@ class Feeding(models.Model):
 	 choices=MEALS,
 	 default=MEALS[0][0]
   )
+
   # Create a cat_id FK
   fish = models.ForeignKey(Fish, on_delete=models.CASCADE)
 
