@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Fish , Plants
+from .models import Fish, Plants
 from .forms import FeedingForm
 
 # FOR HOME
